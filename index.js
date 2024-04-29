@@ -1,9 +1,8 @@
 const express = require('express');
 const path = require('path');
-const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 5000; // Port 5000 by default
+const PORT = process.env.PORT || 8080; // Port 8080 by default
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
@@ -14,6 +13,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Route for the root directory
 app.get('/game/gba/1', (req, res) => {
   res.render('roms/gba/1');
+});
+
+app.get('/', (req, res) => {
+  res.render('index');
 });
 
 // Start the server
