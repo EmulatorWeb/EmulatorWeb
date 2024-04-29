@@ -246,3 +246,9 @@ td > img {
 .btn {
 	margin-bottom: 0.5em;
 }
+
+@media (orientation: portrait) {
+    #gameinfo {
+        display: none;
+    }
+}

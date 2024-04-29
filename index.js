@@ -15,6 +15,10 @@ app.get('/game/gba/1', (req, res) => {
   res.render('roms/gba/1');
 });
 
+app.get('/game/ds/1', (req, res) => {
+  res.render('roms/ds/1');
+});
+
 app.get('/', (req, res) => {
   res.render('index');
 });
