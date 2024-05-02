@@ -247,7 +247,7 @@ td > img {
 	margin-bottom: 0.5em;
 }
 
-@media (orientation: portrait) {
+@media (max-width: 1200px) {
     #gameinfo {
         display: none;
     }
