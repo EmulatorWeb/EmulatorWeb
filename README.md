@@ -23,15 +23,36 @@
 
 ## Introduction
 
-<!-- Your introduction goes here -->
+EmulatorWeb is a versatile web emulator designed to recreate the experience of using old devices right in your browser. Leveraging the codebase from [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS), it empowers users to play classic games and explore nostalgic software from various outdated platforms. Whether you're reminiscing about your favorite childhood games or exploring the history of computing, EmulatorWeb offers a seamless and immersive experience, all within a modern web environment.
 
 ## Features
 
-<!-- Describe the features of your project -->
+- Playing games from a wide range of old devices.
+- Saving game data on the browser.
+- Saving and loading game states.
+- **Account System (Coming Soon):** A secure authentication and user management system is in development to enhance user experience and interaction.
+- A DMCA takedown system.
+- A game request system.
+
+And more...
 
 ## Installation
 
-<!-- Provide installation instructions -->
+1. Download the repository.
+2. Ensure that Node.js is installed on your system. If not, you can download it [here](https://nodejs.org/en).
+3. Extract the files from the repository.
+4. Open a command prompt or terminal window in the extracted folder.
+5. Install the required dependencies by running the following command:
+
+```
+npm install
+```
+
+6. Start the server by running the following command:
+
+```
+node index
+```
 
 ## Usage
 
