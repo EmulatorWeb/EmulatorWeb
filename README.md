@@ -1,4 +1,4 @@
-<p text-align="center">
+<p style="text-align: center;">
     <h1>EmulatorWeb</h1>
 </p>
 <p align="center">
