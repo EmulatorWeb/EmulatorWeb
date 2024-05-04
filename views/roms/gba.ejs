@@ -1,7 +1,7 @@
 <html>
     <head>
 		<%- include("../include/head") %>
-		<title>Pokemon - Emerald Version (EmulatorWeb)</title>
+		<title><%= gameName %> (EmulatorWeb)</title>
 		<link rel="stylesheet" href="/resources/emulator.css" />
     </head>
     <body>
@@ -55,11 +55,11 @@
         <script>
             EJS_player = "#game";
             EJS_core = "gba";
-            EJS_gameName = "Pokemon - Emerald Version";
+            EJS_gameName = `<%= gameName %>`;
             EJS_color = "#0064ff";
             EJS_startOnLoaded = true;
-            EJS_pathtodata = "/data";
-            EJS_gameUrl = "/rom/gba/1/rom.gba";
+            EJS_pathtodata = "/data/";
+            EJS_gameUrl = "/rom/gba/" + `<%= gameId %>` +"/gba" + `<%= gameId %>` + ".gba";
             EJS_biosUrl = "/rom/gba/bios.bin";
         </script>
         <script src="/data/loader.js"></script>

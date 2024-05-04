@@ -129,7 +129,7 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-./public/rom/ds/*
-./public/rom/gba/*
-!./public/rom/ds/bios.bin
-!./public/rom/gba/bios.bin
+/public/rom/ds/*
+/public/rom/gba/*
+!/public/rom/ds/bios.bin
+!/public/rom/gba/bios.bin

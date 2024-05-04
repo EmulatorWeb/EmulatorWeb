@@ -40,6 +40,34 @@ app.get('/game/ds/:id', (req, res) => {
     });
 });
 
+// Define a route to handle requests for /game/gba/:id
+app.get('/game/gba/:id', (req, res) => {
+    const gameId = req.params.id;
+    const configPath = path.join(__dirname, 'public', 'rom', 'gba', gameId, 'config.json');
+
+    // Read the contents of config.json
+    fs.readFile(configPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading config file:', err);
+            res.status(500).send('Error reading config file');
+            return;
+        }
+
+        try {
+            // Parse the JSON data
+            const config = JSON.parse(data);
+            // Extract the game name
+            const gameName = config.name;
+
+            // Render the EJS template with the extracted game name
+            res.render('roms/gba.ejs', { gameName, gameId });
+        } catch (parseError) {
+            console.error('Error parsing config JSON:', parseError);
+            res.status(500).send('Error parsing config JSON');
+        }
+    });
+});
+
 app.get('/', (req, res) => {
   res.render('index');
 });
