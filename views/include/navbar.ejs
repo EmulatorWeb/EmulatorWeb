@@ -1,26 +1,42 @@
 <nav class="navbar">
+    <div class="navbar-logo">
+        <a href="/">EmulatorWeb</a>
+    </div>
     <ul class="navbar-list">
-        <li><a href="#" class="navbar-link"><i class="fas fa-home"></i></a></li>
-        <li><a href="#" class="navbar-link"><i class="fas fa-gamepad"></i></a></li>
-        <li><a href="#" class="navbar-link"><i class="fas fa-list"></i></a></li>
+        <li><a href="/" class="navbar-link"><i class="fas fa-home"></i></a></li>
+        <li><a href="/devices" class="navbar-link"><i class="fas fa-gamepad"></i></a></li>
+        <li><a href="/games" class="navbar-link"><i class="fas fa-list"></i></a></li>
         <!-- <li><a href="#" class="navbar-link"><i class="fas fa-comment-alt"></i> Forum</a></li> -->
     </ul>
 </nav>
 
 <style>
     .navbar {
+        display: flex; /* Use flexbox */
+        align-items: stretch; /* Items will stretch vertically */
         background-color: #444444;
         padding: 10px;
+    }
+
+    .navbar-logo {
+        color: white;
+        font-size: 20px;
+        margin-right: auto; /* Push the logo to the left */
+    }
+
+    .navbar-logo > a {
+        color: white;
+        text-decoration: none;
     }
 
     .navbar-list {
         list-style-type: none;
         margin: 0;
         padding: 0;
+        display: flex;
     }
 
     .navbar-list li {
-        display: inline;
         margin-right: 10px;
     }
 
@@ -28,11 +44,7 @@
         color: white;
         text-decoration: none;
         padding: 5px 10px;
-    }
-
-    .navbar-link:hover {
-        background-color: #333333;
+        display: flex;
+        align-items: center; /* Center icon vertically */
     }
 </style>
-
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>

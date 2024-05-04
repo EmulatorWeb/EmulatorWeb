@@ -1,8 +1,10 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
+const ejs = require('ejs');
 
 const app = express();
-const PORT = process.env.PORT || 8080; // Port 8080 by default
+const PORT = process.env.PORT || 8080;
 
 // Set EJS as the view engine
 app.set('view engine', 'ejs');
@@ -10,13 +12,32 @@ app.set('view engine', 'ejs');
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Route for the root directory
-app.get('/game/gba/1', (req, res) => {
-  res.render('roms/gba/1');
-});
+// Define a route to handle requests for /game/ds/:id
+app.get('/game/ds/:id', (req, res) => {
+    const gameId = req.params.id;
+    const configPath = path.join(__dirname, 'public', 'rom', 'ds', gameId, 'config.json');
 
-app.get('/game/ds/1', (req, res) => {
-  res.render('roms/ds/1');
+    // Read the contents of config.json
+    fs.readFile(configPath, 'utf8', (err, data) => {
+        if (err) {
+            console.error('Error reading config file:', err);
+            res.status(500).send('Error reading config file');
+            return;
+        }
+
+        try {
+            // Parse the JSON data
+            const config = JSON.parse(data);
+            // Extract the game name
+            const gameName = config.name;
+
+            // Render the EJS template with the extracted game name
+            res.render('roms/ds.ejs', { gameName, gameId });
+        } catch (parseError) {
+            console.error('Error parsing config JSON:', parseError);
+            res.status(500).send('Error parsing config JSON');
+        }
+    });
 });
 
 app.get('/', (req, res) => {

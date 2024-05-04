@@ -1,0 +1,67 @@
+<html>
+    <head>
+		<%- include("../include/head") %>
+		<title><%= gameName %> (EmulatorWeb)</title>
+		<link rel="stylesheet" href="/resources/emulator.css" />
+    </head>
+    <body>
+        <div id="container" style="width:640px;height:480px;max-width:100%">
+            <div id="game"></div>
+        </div>
+        <section id="gameinfo">
+			<table id="mapping">
+				<tr>
+					<td><img src="/resources/switch_dpad_up.png"/></td>
+					<td>Up</td>
+				</tr>
+				<tr>
+					<td><img src="/resources/switch_dpad_down.png"/></td>
+					<td>Down</td>
+				</tr>
+				<tr>
+					<td><img src="/resources/switch_dpad_left.png"/></td>
+					<td>Left</td>
+				</tr>
+				<tr>
+					<td><img src="/resources/switch_dpad_right.png"/></td>
+					<td>Right</td>
+				</tr>
+				<tr>
+					<td><img src="/resources/switch_button_a.png"/></td>
+					<td>Z</td>
+				</tr>
+				<tr>
+					<td><img src="/resources/switch_button_b.png"/></td>
+					<td>X</td>
+				</tr>
+				<tr>
+					<td><img src="/resources/switch_button_l.png"/></td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td><img src="/resources/switch_button_r.png"/></td>
+					<td>S</td>
+				</tr>
+				<tr>
+					<td>Start</td>
+					<td>Enter</td>
+				</tr>
+				<tr>
+					<td>Select</td>
+					<td>\</td>
+				</tr>
+			</table>
+		</section>
+        <script>
+            EJS_player = "#game";
+            EJS_core = "nds";
+            EJS_gameName = `<%= gameName %>`;
+            EJS_color = "#0064ff";
+            EJS_startOnLoaded = true;
+            EJS_pathtodata = "/data/";
+            EJS_gameUrl = "/rom/ds/" + `<%= gameId %>` +"/ds" + `<%= gameId %>` + ".nds";
+            EJS_biosUrl = "/rom/ds/bios.bin";
+        </script>
+        <script src="/data/loader.js"></script>
+    </body>
+</html>
