@@ -3,5 +3,5 @@
 </p>
 <p align="center">
     <a href="https://github.com/EmulatorWeb/EmulatorWeb/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/m/badges/shields" /></a>
+        <img src="https://img.shields.io/github/commit-activity/m/EmulatorWeb/EmulatorWeb" /></a>
 </p>
