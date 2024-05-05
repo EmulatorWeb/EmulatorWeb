@@ -17,6 +17,6 @@
 - [Introduction](/docs/introduction.md)
 - [Features](/docs/features.md)
 - [Installation](/docs/installation.md)
-- [Usage](/docs/usage/README.md)
+- [Usage](https://github.com/EmulatorWeb/EmulatorWeb/wiki)
 - [Contributing](/docs/contributing.md)
 - [License](/docs/license.md)
