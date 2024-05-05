@@ -1,0 +1,56 @@
+name: Request a game
+description: Add an entry for a new game to the website.
+title: "[Game request]: Enter game name here..."
+labels: ["game-request"]
+assignees:
+  - OmgRod
+body:
+  - type: input
+    id: romlink
+    attributes:
+      label: ROM Direct Link
+      description: Enter the direct link to the ROM.
+      placeholder: https://static.emulatorgames.net/roms/gameboy-advance/Classic%20NES%20-%20Super%20Mario%20Bros.%20GBA.zip
+    validations:
+      required: true
+  - type: dropdown
+    id: devicetype
+    attributes:
+      label: Device Type
+      description: Enter the name of the device this game can run on
+      options:
+        - 3DO
+        - Arcade
+        - Atari 2600
+        - Atari 7800
+        - Atari Jaguar
+        - Atari Lynx
+        - Game Boy Advance
+        - Gameboy | Color
+        - MSX
+        - Neo Geo Poket
+        - NES / Famicon
+        - Nintendo 64
+        - Nintendo DS
+        - Playstation
+        - Sega 32X
+        - Sega CD
+        - Sega Game Gear
+        - Sega Master System
+        - Sega Mega Drive
+        - Sega Saturn
+        - SNES
+        - TurboGrafs-16 | PC Engine
+        - Virtual Boy
+        - Wanderswan | Color
+      default: 11
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      description: By submitting this issue, you agree that this ROM is not a form of malware.
+      options:
+        - label: I agree to the statement above
+          required: true

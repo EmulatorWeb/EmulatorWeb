@@ -1,0 +1,29 @@
+name: DMCA a game
+description: Request a takedown for a game.
+title: "[DMCA]: Enter game name and business here..."
+labels: ["game-request"]
+assignees:
+  - OmgRod
+body:
+  - type: input
+    id: romlink
+    attributes:
+      label: Game link
+      description: Enter the URL of the game.
+    validations:
+      required: true
+  - type: textarea
+    id: contacts
+    attributes:
+      label: Contact details
+      description: Enter your contact details so we can discuss this if needed.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Terms
+      description: By submitting this issue, you agree that this is a legitimate takedown request and you are the copyright owner.
+      options:
+        - label: I agree to the statement above
+          required: true
